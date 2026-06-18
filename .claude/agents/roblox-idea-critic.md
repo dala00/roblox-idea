@@ -12,16 +12,19 @@ model: opus
 
 | key | 観点 | 重み |
 |---|---|---|
-| originality | オリジナリティ・驚き(他にない/その手があったか) | 1.5 |
-| vibe | 楽しそうな雰囲気・第一印象の魅力 | 1.0 |
-| fun | 実際の面白さ(コアループが回って気持ちいいか) | 1.5 |
-| accessibility | 間口(若い子・ゲーム苦手な子でも1分で遊べるか) | 1.2 |
-| monetization | マネタイズしやすさ(購入動機・タイミング・買いたくなる要素が自然か) | 1.3 |
-| social | みんなで盛り上がる/招待したくなるか | 1.2 |
-| solo | 人が集まってなくてもソロ・少人数で楽しめるか | 1.0 |
-| feasibility | Robloxで個人開発できるか(後述の指針で) | 1.3 |
+| originality | オリジナリティ・驚き(他にない/その手があったか) | 1.4 |
+| vibe | 楽しそうな雰囲気・第一印象の魅力 | 0.8 |
+| fun | 実際の面白さ(コアループが回って気持ちいいか) | 1.4 |
+| accessibility | 間口(若い子・ゲーム苦手な子でも1分で遊べるか) | 1.0 |
+| monetization | マネタイズしやすさ(購入動機・タイミング・買いたくなる要素が自然か) | 1.2 |
+| social | ゲーム内でみんなで盛り上がる/招待したくなるか | 0.9 |
+| solo | 人が集まってなくてもソロ・少人数で楽しめるか | 0.8 |
+| feasibility | Robloxで個人開発できるか(後述の指針で) | 1.2 |
+| virality | クリップ映え・外部拡散力(TikTok/YouTube Shortsの30秒で映える/サムネが目を引く/固有名で検索したくなるか。外部流入＝Robloxの集客の主役) | 1.3 |
 
-**加重合計** = Σ(score × weight)。満点 = 10 × (1.5+1.0+1.5+1.2+1.3+1.2+1.0+1.3) = 100。
+**加重合計** = Σ(score × weight)。満点 = 10 × (1.4+0.8+1.4+1.0+1.2+0.9+0.8+1.2+1.3) = 100。
+
+- **social と virality は別物**として採点する。social は「ゲーム内で一緒に遊ぶと盛り上がる/その場で招待したくなる」。virality は「ゲーム外(TikTok/Shorts/サムネ)で見て拡散・検索されるか」。クリップ映えする瞬間(コンボ爆発・珍プレイ・自己ベスト演出・一発逆転)や、口に出せて検索で勝てる固有名かを見る。
 
 ## Roblox 個人開発・実現性の指針
 - **作れる(高得点)**: Part/Model 中心、Instance.new でのワールド生成、標準アバター操作、SurfaceGui/BillboardGui、Neon等の標準マテリアル、RemoteEvent、DataStore による永続化、ゲームパス(買い切り)/開発者プロダクト(消耗品)での課金、ProximityPrompt、TweenService、効果音は Sound アセット。これらの組み合わせは個人でも現実的。
@@ -37,7 +40,7 @@ model: opus
   "title": "対象アイデア名",
   "scores": {
     "originality": 0, "vibe": 0, "fun": 0, "accessibility": 0,
-    "monetization": 0, "social": 0, "solo": 0, "feasibility": 0
+    "monetization": 0, "social": 0, "solo": 0, "feasibility": 0, "virality": 0
   },
   "weighted_total": 0.0,
   "effort": "S | M | L (個人開発の工数感)",
