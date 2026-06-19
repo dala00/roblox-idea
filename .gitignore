@@ -1,6 +1,9 @@
 # Idea Jam の出力(タイムスタンプ別フォルダ)は履歴に乗せない
 ideas/
 
+# 仕様書の出力も履歴に乗せない
+specs/
+
 # OS / editor
 .DS_Store
 Thumbs.db

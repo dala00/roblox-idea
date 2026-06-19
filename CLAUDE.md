@@ -10,14 +10,20 @@
   - `/roblox-idea-jam <テーマ>` … テーマ縛り
   - `/roblox-idea-jam --count=N` … 本数指定
   - `/roblox-idea-jam --trends` … トレンドを強制再検索
+- `/roblox-idea-spec` … アイデア1本を実装着手できる仕様書(Markdown)に落とし込む（起草→独立レビュー→反映）
+  - `/roblox-idea-spec <タイトル|rank>` … 最新jamの該当案を仕様化。無指定なら最新ideas.jsonから選ぶ。JSON/自由記述の直貼りも可
 
 ## 構成
-- `.claude/skills/roblox-idea-jam/SKILL.md` … オーケストレーション本体（手順はここが正）
+- `.claude/skills/roblox-idea-jam/SKILL.md` … アイデア出し(生成→採点→順位→HTML)のオーケストレーション本体（手順はここが正）
+- `.claude/skills/roblox-idea-spec/SKILL.md` … アイデア→仕様化(起草→レビュー→反映→Markdown出力)のオーケストレーション本体
 - `.claude/skills/_shared/game-design-principles.md` … **ゲーム設計の観点（時間で腐らない不変の原則）の単一の正**。各スキル/エージェントがここを参照する（設計ビュー。9評価軸はこの採点ビュー）
 - `.claude/agents/roblox-idea-generator.md` … アイデア発案サブエージェント（1起動=1案、JSONで返す）
 - `.claude/agents/roblox-idea-critic.md` … 採点サブエージェント（生成役とは別人格、9観点×加重合計100点）
+- `.claude/agents/roblox-spec-writer.md` … 仕様起草サブエージェント（アイデア1本→仕様書Markdown）
+- `.claude/agents/roblox-spec-reviewer.md` … 仕様レビューサブエージェント（起草役とは別人格、抜け/曖昧/過剰/原則違反を指摘）
 - `research/` … Robloxトレンド調査のキャッシュ（`roblox-trends-<日時>.md`、先頭に `調査日時:`）。**腐る市場データのみ**（不変の原則は上の principles.md 側）
-- `ideas/` … 出力先。`ideas/<yyyymmddhhiiss>/` に `report.html` と `ideas.json`。**.gitignore済み**
+- `ideas/` … アイデア出しの出力先。`ideas/<yyyymmddhhiiss>/` に `report.html` と `ideas.json`。**.gitignore済み**
+- `specs/` … 仕様書の出力先。`specs/<slug>/spec.md`。**.gitignore済み**
 
 ## 評価軸（各1〜10 / 重み付き合計100点満点・9観点）
 オリジナリティ・驚き(×1.4) / 雰囲気(×0.8) / 実際の面白さ＝コアループ(×1.4) / 間口＝若年・ゲーム苦手でも(×1.0) / マネタイズ(×1.2) / ソーシャル・招待性=ゲーム内(×0.9) / ソロ・少人数耐性(×0.8) / Roblox個人開発の実現性(×1.2) / クリップ映え・外部拡散力=TikTok/Shorts(×1.3)
