@@ -27,7 +27,7 @@ description: Robloxゲームのアイデア1本を、設計原則(game-design-pr
 - プロンプトにアイデアのJSON/自由記述が**直接ある**ならそれを使う。
 - 引数にタイトルやrankがあれば、最新の `ideas/<最新timestamp>/ideas.json`(Globで最新フォルダ)から該当案を取る。
 - **無指定なら**最新 `ideas.json` を読み、候補一覧（rank・タイトル・weighted_total）を提示して**どの案を仕様化するかユーザーに確認**(AskUserQuestion 等。rank1を推奨として提示)。ideas.json が無ければ、ユーザーにアイデアの記述を求める。
-- 対象が決まったら、その生成データ（pitch/surprise/core_loop/progression/monetization/clip_appeal など）を writer に渡せる形に整える。
+- 対象が決まったら、その生成データ（pitch/surprise/core_loop/progression/monetization/first_session など）を writer に渡せる形に整える。
 
 ## Step 2: 起草（spec-writer）
 **roblox-spec-writer** を起動(Agent tool, subagent_type=`roblox-spec-writer`)。プロンプトに渡す：

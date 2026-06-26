@@ -22,11 +22,14 @@ model: opus
 | social | ゲーム内でみんなで盛り上がる/招待したくなるか | 0.9 |
 | solo | 人が集まってなくてもソロ・少人数で楽しめるか | 0.8 |
 | feasibility | Robloxで個人開発できるか(後述の指針で) | 1.2 |
-| virality | クリップ映え・外部拡散力(TikTok/YouTube Shortsの30秒で映える/サムネが目を引く/固有名で検索したくなるか。外部流入＝Robloxの集客の主役) | 1.3 |
+| first_session | 初回体験で刺さるか(新規が1回目のプレイ中にコアの面白さを離脱せず体験でき、かつ翌日また遊びたくなるか=D1) | 1.3 |
 
 **加重合計** = Σ(score × weight)。満点 = 10 × (1.4+0.8+1.4+1.0+1.2+0.9+0.8+1.2+1.3) = 100。
 
-- **social と virality は別物**として採点する。social は「ゲーム内で一緒に遊ぶと盛り上がる/その場で招待したくなる」。virality は「ゲーム外(TikTok/Shorts/サムネ)で見て拡散・検索されるか」。クリップ映えする瞬間(コンボ爆発・珍プレイ・自己ベスト演出・一発逆転)や、口に出せて検索で勝てる固有名かを見る。
+- **first_session が最重要軸**。本環境は**集客が当面「広告」主体**（外部拡散もRobloxオーガニック露出も当てにしない）前提なので、「広告費で連れてきた一人を1回目で確実に楽しませ、翌日また来させられるか」が死活的＝この軸に最大の比重を置く。採点では次の2点を見る: ①**初回到達**=新規が1回目のプレイ中に、間口(操作の易しさ)とは別に「このゲームの本当の面白さ(コア)」を離脱せず体験できる導線・難度・テンポか。②**D1の引き**=初回セッション終わりに「翌日また開く理由」(次の目標/未解放/続きが気になる/約束)が見えているか。「面白そうに“見える”」だけで初回に体験させられない案は低評価。
+- **first_session と fun は別物**。fun は「コアループが潜在的に面白いか」、first_session は「その面白さを1回目で実際に届けられるか＋翌日も引けるか」。潜在的に面白くても初回で伝わらなければ first_session は低い。
+- **first_session と accessibility も別物**。accessibility は「操作・理解の易しさ(間口)」、first_session は「コアの面白さ自体への到達と継続意欲」。易しく入れても面白さに届かなければ first_session は低い。
+- **「クリップ映え・外部拡散力(virality)」は採点しない**。発信力が無い前提で最適化する意味がないため、評価軸から除外した。アイデアにバズ前提の要素しか無くても、それ自体は加点も減点もしない（その魅力が初回体験に効くなら first_session で拾う）。
 
 ## Roblox 個人開発・実現性の指針
 - **作れる(高得点)**: Part/Model 中心、Instance.new でのワールド生成、標準アバター操作、SurfaceGui/BillboardGui、Neon等の標準マテリアル、RemoteEvent、DataStore による永続化、ゲームパス(買い切り)/開発者プロダクト(消耗品)での課金、ProximityPrompt、TweenService、効果音は Sound アセット。これらの組み合わせは個人でも現実的。
@@ -42,7 +45,7 @@ model: opus
   "title": "対象アイデア名",
   "scores": {
     "originality": 0, "vibe": 0, "fun": 0, "accessibility": 0,
-    "monetization": 0, "social": 0, "solo": 0, "feasibility": 0, "virality": 0
+    "monetization": 0, "social": 0, "solo": 0, "feasibility": 0, "first_session": 0
   },
   "weighted_total": 0.0,
   "effort": "S | M | L (個人開発の工数感)",
